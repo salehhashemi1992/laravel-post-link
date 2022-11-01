@@ -2,7 +2,9 @@
 
 namespace Salehhashemi1992\LaravelPostLink;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Salehhashemi1992\LaravelPostLink\Components\PostLink;
 
 class LaravelPostLinkServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,7 @@ class LaravelPostLinkServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'salehhashemi1992');
+        dd('test');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'salehhashemi1992');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
@@ -22,6 +24,8 @@ class LaravelPostLinkServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
+
+        Blade::component('post-link', PostLink::class);
     }
 
     /**
@@ -31,8 +35,6 @@ class LaravelPostLinkServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/post-link.php', 'post-link');
-
         // Register the service the package provides.
         $this->app->singleton('laravel-post-link', function ($app) {
             return new LaravelPostLink;
@@ -56,27 +58,9 @@ class LaravelPostLinkServiceProvider extends ServiceProvider
      */
     protected function bootForConsole(): void
     {
-        // Publishing the configuration file.
-        $this->publishes([
-            __DIR__.'/../config/laravel-post-link.php' => config_path('laravel-post-link.php'),
-        ], 'laravel-post-link.config');
-
         // Publishing the views.
-        /*$this->publishes([
+        $this->publishes([
             __DIR__.'/../resources/views' => base_path('resources/views/vendor/salehhashemi1992'),
-        ], 'laravel-post-link.views');*/
-
-        // Publishing assets.
-        /*$this->publishes([
-            __DIR__.'/../resources/assets' => public_path('vendor/salehhashemi1992'),
-        ], 'laravel-post-link.views');*/
-
-        // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/salehhashemi1992'),
-        ], 'laravel-post-link.views');*/
-
-        // Registering package commands.
-        // $this->commands([]);
+        ], 'post-link.views');
     }
 }
