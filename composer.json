@@ -1,0 +1,43 @@
+{
+    "name": "salehhashemi1992/laravel-post-link",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saleh Hashemi",
+            "email": "salpars2004@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/salehhashemi1992/laravel-post-link",
+    "keywords": [
+        "Laravel",
+        "PostLink",
+        "form-components"
+    ],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "Salehhashemi1992\\LaravelPostLink\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Salehhashemi1992\\LaravelPostLink\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Salehhashemi1992\\LaravelPostLink\\LaravelPostLinkServiceProvider"
+            ],
+            "aliases": {
+                "LaravelPostLink": "Salehhashemi1992\\LaravelPostLink\\Facades\\LaravelPostLink"
+            }
+        }
+    }
+}
