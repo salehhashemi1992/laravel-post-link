@@ -15,10 +15,12 @@ $ composer require salehhashemi1992/laravel-post-link
 ```
 
 ## Usage
-`<x-post-link method="PUT" :url="route('notifications.mark-as-read', $notification->id)"
+```html
+<x-post-link method="PUT" :url="route('notifications.mark-as-read', $notification->id)"
 class="badge bg-danger rounded-pill float-end">
 <i class="fe-x text-light"></i>
-</x-post-link>`
+</x-post-link>
+```
 
 ## Change log
 
