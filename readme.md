@@ -5,8 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
-
+Post Link Component for Laravel
 ## Installation
 
 Via Composer
@@ -16,6 +15,10 @@ $ composer require salehhashemi1992/laravel-post-link
 ```
 
 ## Usage
+`<x-post-link method="PUT" :url="route('notifications.mark-as-read', $notification->id)"
+class="badge bg-danger rounded-pill float-end">
+<i class="fe-x text-light"></i>
+</x-post-link>`
 
 ## Change log
 
