@@ -15,7 +15,6 @@ class LaravelPostLinkServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        dd('test');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'salehhashemi1992');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
